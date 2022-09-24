@@ -20,6 +20,7 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=$USERNAME
 ENV N8N_BASIC_AUTH_PASSWORD=$PASSWORD
 
+RUN apt install -y curl
 RUN curl --create-dirs -o $HOME/.postgresql/root.crt -O https://cockroachlabs.cloud/clusters/7730794a-0a62-474d-9b1e-d26bc3940831/cert
 
 CMD ["n8n", "start"]
